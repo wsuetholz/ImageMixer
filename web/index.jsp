@@ -19,26 +19,18 @@
     </head>
     <body>
        	<h1>Nifty Little Image Mixer</h1>
-	<h2>Please select 1 image from each column and press the Process button</h2>
-	<article id="listbox" class="target">
-	    <form id="listbox" name="listbox" method="POST" action="<%= request.getContextPath() %>/ShowImages">
-		<c:forEach var="i" begin="2" end="7">
-		    <div id="dog${i}" class="dogpic">
-			<ul>
-			    <li>Dog ${i}</li>
-			</ul>
-			<div><p>Picture Slice</p>
-			<input type="radio" name="leftpic" value="${i}"/>Left
-			<input type="radio" name="midpic" value="${i}"/>Middle
-			<input type="radio" name="rightpic" value="${i}"/>Right
-			</div>
-			<figure>
-			    <img src="images/dog${i}.jpg" alt="dog ${i}"/>
-			</figure>
-		    </div>
-		</c:forEach>
-		<input type="submit" value="Process">
-	    </form>
-	</article>
+	<h2>Please select one picture for left, middle and right and then press the Process button</h2>
+	<form id="listbox" name="listbox" method="POST" action="<%= request.getContextPath() %>/ShowImages">
+	    <c:forEach var="i" begin="2" end="7">
+		<div id="dog${i}" class="floated_img">
+		    <input type="radio" name="leftpic" value="${i}"/>Left
+		    <input type="radio" name="midpic" value="${i}"/>Middle
+		    <input type="radio" name="rightpic" value="${i}"/>Right
+		    <img src="images/dog${i}.jpg" alt="dog ${i}"/>
+		</div>
+	    </c:forEach>
+	    <p> </p>
+	    <input type="submit" value="Process">
+	</form>
     </body>
 </html>

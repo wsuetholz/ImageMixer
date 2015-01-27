@@ -1,19 +1,4 @@
-#listbox {
-    overflow: hidden;
-    position: relative;
-}
 
-#listone {
-    float: right;
-    width: 33%;
-}
-
-#listtwo {
-    float: right;
-    width: 33%;
-}
-
-#listthree {
-    float: right;
-    width: 33%;
+.floated_img {
+    float: left;
 }
