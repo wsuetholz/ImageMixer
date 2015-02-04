@@ -16,21 +16,54 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Nifty Little Image Mixer</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="default.css">	
     </head>
     <body>
-       	<h1>Nifty Little Image Mixer</h1>
-	<h2>Please select one picture for left, middle and right and then press the Process button</h2>
-	<form id="listbox" name="listbox" method="POST" action="<%= request.getContextPath() %>/ShowImages">
-	    <c:forEach var="i" begin="2" end="7">
-		<div id="dog${i}" class="floated_img">
-		    <input type="radio" name="leftpic" value="${i}"/>Left
-		    <input type="radio" name="midpic" value="${i}"/>Middle
-		    <input type="radio" name="rightpic" value="${i}"/>Right
-		    <img src="images/dog${i}.jpg" alt="dog ${i}"/>
+       	<h1 align="center">Nifty Little Image Mixer</h1>
+	<h2 align="center">Please select one picture for left, middle and right</h2>
+	<h2 align="center">and then press the Process button</h2>
+	<div class="container-fluid">
+	    <form id="listbox" name="listbox" method="POST" action="<%= request.getContextPath() %>/ShowImages">
+		<div class="row">
+		    <c:forEach var="i" begin="2" end="4">
+			<div id="dog${i}" name="dog${i}" class="col-md-4">
+			    <img src="images/dog${i}.jpg" alt="dog ${i}"/>
+			    <p> </p>
+			    <input type="radio" name="leftpic" value="${i}"/>Left
+			    <input type="radio" name="midpic" value="${i}"/>Middle
+			    <input type="radio" name="rightpic" value="${i}"/>Right
+			    <p> </p>
+			</div>
+		    </c:forEach>
 		</div>
-	    </c:forEach>
-	    <p> </p>
-	    <input type="submit" value="Process">
-	</form>
+		<div class="row">
+		    <c:forEach var="i" begin="5" end="7">
+			<div id="dog${i}" name="dog${i}" class="col-md-4">
+			    <img src="images/dog${i}.jpg" alt="dog ${i}"/>
+			    <p> </p>
+			    <input type="radio" name="leftpic" value="${i}"/>Left
+			    <input type="radio" name="midpic" value="${i}"/>Middle
+			    <input type="radio" name="rightpic" value="${i}"/>Right
+			    <p> </p>
+			</div>
+		    </c:forEach>
+		</div>
+		<p> </p>
+		<div align="center">
+		    <input class="btn-lg" type="submit" value="  Process  ">
+		</div>
+	    </form>
+	</div>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     </body>
+
 </html>
